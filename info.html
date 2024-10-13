@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTRO</title>
+    <style>
+        .room{
+width:300px;
+height:200px;
+border:solid 2px;
+position:sticky;
+top:10px;
+background-size:100% 100%;
+background-image:url("bg.jpg");
+overflow:hidden;
+margin:auto;
+}
+#body{
+width:80px;
+height:130px;
+background-image:url("shot.png");
+background-size:100% 100%;
+position:absolute;
+bottom:0px;
+left:2px;
+border:none;
+}
+button{
+    width: 70px;
+    border: none;
+    padding: 10px;
+    background-image: linear-gradient(#42A1EC,#0070C9);
+}
+p{
+    font-family: 'Courier New', Courier, monospace;
+}
+.sub{
+    position: absolute;
+    font-size: 10px;
+    right: 0;
+    color: white;
+}
+button{
+    left: 70px;
+    position: relative;
+}
+    </style>
+</head>
+<body bgcolor="black">
+    <div class="room">
+<center>
+    <p><b>ZombieMATH</b><br> created by</p>
+<br><span style="color: white;">
+Angel Rose Dugaduga <br>Christian Nyl Aresgado
+<br>Lloyd Basilgo <br>Gary F. Meramonte Jr.
+</span><br>
+<p class="sub">
+   App Project Submit to <br>
+    Yann Tio-Nieves
+</p>
+
+</center>
+<button onclick="reload()">Back</button>   
+<div id="body"></div>
+    </div>
+</body>
+<script>
+    function sever(){
+        setInterval(function(){
+        location.replace("info.html");
+    },1000);
+    }
+   
+   // sever()
+   function reload(){
+var audioR = new Audio();
+audioR.src ="reload.mp3";
+audioR.play();
+setTimeout(() => {
+    location.replace("intro.html");
+}, 1000);
+}
+</script>
+</html>

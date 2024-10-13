@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU</title>
+    <style>
+        .room{
+width:300px;
+height:200px;
+border:solid 2px;
+position:sticky;
+top:10px;
+background-size:100% 100%;
+background-image:url("bg.jpg");
+overflow:hidden;
+margin:auto;
+}
+#body{
+width:80px;
+height:130px;
+background-image:url("shot.png");
+background-size:100% 100%;
+position:absolute;
+bottom:0px;
+left:2px;
+border:none;
+}
+button{
+    margin-top: 4px;
+    width: 70px;
+    border: none;
+    padding: 7px;
+    background-image: linear-gradient(#42A1EC,#0070C9);
+}
+.b{
+    position: absolute;
+    left: 1px;
+}
+.en{
+    position: absolute;
+    right: 1px;
+}
+    </style>
+</head>
+<body bgcolor="black">
+    <div class="room">
+
+    <button onclick="reload()" class="b">Back</button>
+<button onclick="p()" class="en">Practice</button>
+
+        <center>
+
+    <button onclick="e()">Easy</button><br><br>
+    <button onclick="m()">Medium</button><br><br>
+    <button onclick="h()">Hard</button><br><br>
+<button onclick="end()">Survival</button>
+
+</center>
+        <div id="body"></div>
+    </div>
+</body>
+<script>
+    function sever(){
+        setInterval(function(){
+        location.replace("menu.html");
+    },1000);
+    }
+   
+  //  sever()
+
+    function e(){
+       
+        var audioR = new Audio();
+audioR.src ="reload.mp3";
+audioR.play();
+setTimeout(() => {
+    location.replace("easy.html");
+}, 1000);
+    }
+    function m(){
+
+        var audioR = new Audio();
+audioR.src ="reload.mp3";
+audioR.play();
+setTimeout(() => {
+    location.replace("medium.html");
+}, 1000);
+    }
+    function h(){
+        
+        var audioR = new Audio();
+audioR.src ="reload.mp3";
+audioR.play();
+setTimeout(() => {
+    location.replace("hard.html");
+}, 1000);
+    }
+    function p(){
+    
+        var audioR = new Audio();
+audioR.src ="reload.mp3";
+audioR.play();
+setTimeout(() => {
+    location.replace("index.html");
+}, 1000);
+    }
+    function end(){
+    
+    var audioR = new Audio();
+audioR.src ="reload.mp3";
+audioR.play();
+setTimeout(() => {
+location.replace("endless.html");
+}, 1000);
+}
+    function reload(){
+var audioR = new Audio();
+audioR.src ="reload.mp3";
+audioR.play();
+setTimeout(() => {
+    location.replace("intro.html");
+}, 1000);
+}
+</script>
+</html>

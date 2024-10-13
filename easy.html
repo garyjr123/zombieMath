@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html onclick="audioB.play();">
+<head>
+<title>EASY </title>
+<style type="text/css">
+.room{
+width:300px;
+height:200px;
+border:solid 2px;
+position:sticky;
+top:10px;
+background-size:100% 100%;
+background-image:url("bg.jpg");
+overflow:hidden;
+margin:auto;
+}
+#body{
+width:80px;
+height:130px;
+background-image:url("shot.png");
+background-size:100% 100%;
+position:absolute;
+bottom:0px;
+left:2px;
+border:none;
+}
+
+
+
+#bala{
+width:2px;
+height:2px;
+border-radius:100%;
+background-color:white;
+position:absolute;
+left:30px;
+top:55px;
+display: none;
+border:none;
+}
+.bala{
+animation:bala 1s linear infinite;
+}
+@keyframes bala{
+0%{left:30px;}
+100%{left:300px;}
+}
+
+.health{
+width:70px;
+height:5px;
+position:absolute;
+top:60px;
+left:10px;
+background-color:red;
+}
+#bar{
+width:70px;
+height:5px;
+background-color:green;
+}
+#shot{
+border-radius:10%;
+width:100px;
+height:100px;
+border:none;
+position:relative;
+background-size:100% 100%;
+background-image:url("gun.jpg");
+}
+#in{
+position:relative;
+padding-right:10px;
+text-align:right;
+outline:none;
+display:none;
+width:300px;
+height:100px;
+border:none;
+background-size:100% 100%;
+background-image:url("reload.jpg");
+}
+input{
+
+text-align:right;
+}
+
+
+
+
+
+
+#ebody{
+width:30px;
+height:50px;
+position:absolute;
+bottom:20px;
+left:320px;
+border:none;
+animation:e 1s infinite linear;
+}
+@keyframes e{
+0%{left:320px;}
+100%{left:-200px;}
+}
+.eulo{
+width:100px;
+height:130px;
+background-image:url("z.gif");
+background-size:100% 100%;
+position:absolute;
+border-radius:100%;
+top:-50px;
+left:-40px;
+}
+.etiilR{
+width:8px;
+height:20px;
+background-color:grey;
+position:absolute;
+border:solid black;
+top:50px;
+left:0px;
+animation:r 1s infinite linear;
+}
+@keyframes r{
+0%{left:0px}
+50%{left:20px;}
+100%{left:0px;}
+}
+.etiilL{
+width:8px;
+height:20px;
+background-color:grey;
+position:absolute;
+border:solid black;
+top:50px;
+left:20px;
+animation:l 1s infinite linear;
+}
+@keyframes l{
+0%{left:20px}
+50%{left:0px;}
+100%{left:20px;}
+}
+.ekamot{
+width:30px;
+height:8px;
+background-color:grey;
+position:absolute;
+border:solid black;
+top:15px;
+right:15px;
+}
+
+
+#padding{
+width:2px;
+height:100px;
+position:absolute;
+bottom:0px;
+left:40px;
+}
+.km{
+position:absolute;
+right:10px;
+top: -20px;
+}
+.in{
+width:40px;
+height: 31px;
+text-align:center;
+}
+#play{
+display: none;
+}
+img{
+widows:100px;
+height:100px;
+border-radius:100%;
+}
+.quit{
+    padding: 10px;
+    border: none;
+    background-image: linear-gradient(#42A1EC,#0070C9);
+    font-family: monospace;
+}
+.pe{
+    background-image: linear-gradient(#42A1EC,#0070C9);
+    font-family: monospace;
+    border: none;
+    padding: 10px;
+}
+</style>
+</head>
+<body bgcolor="black" >
+
+<!------Room------------->
+<div class="room" >
+<button id="quit" onclick="quit()" class="quit">QUIT</button>
+
+<div class="km" >
+<h5>
+    Easy  <br>
+<span id="kill" >0</span> :Kills
+<br>
+<span id="km" >20</span> Zombies
+</h5>
+</div>
+
+
+<input class="in"  id="numOne"  value="1" disabled="disabled" >
+<input class="in"  value="+" disabled="disabled" >
+<input class="in"  id="numTwo"  value="1" disabled="disabled" >
+
+<!----------Body character---------------->
+<div id="health"  class="health" >
+<div id="bar" ></div>
+</div>
+
+<div id="body" >
+<div id="ulo" ></div>
+
+<div id="kamot" >
+<div id="baril" >
+<div id="bala" ></div>
+</div>
+</div>
+
+<div id="tiilR" ></div>
+<div id="tiilL" ></div>
+</div>
+
+<div id="padding" ></div>
+<!---------enemy----------------->
+
+<div id="ebodys">
+    <div id="ebody" >
+        <div class="eulo" ></div>
+        
+        <div lass="ekamot" >
+        </div>
+        
+        <div lass="etiilR" ></div>
+        <div lass="etiilL" ></div>
+        </div>
+</div>
+<!----------gameover---------------->
+
+<center id="gameover" style="font-family: monospace; display: none;">
+    <h1>Game <br> over</h1>
+</center>
+<center id="win" style="font-family: monospace; display: none;">
+    <h1 style="color:white;">Congratulations!!! <br> you win!!</h1>
+</center>
+
+
+
+</div>
+<!---------Play again----------------->
+<center id="play">
+    <button class="pe" onclick="playA()">Play again</button>
+    <button class="pe" onclick="exit()">Exit</button>
+    </center>
+
+<!-------------------------->
+<br><br>
+<center>
+<button id="shot"  onclick="shot()"></button>
+<input onclick="reload()" type="number" id="in" >
+</center>
+
+<!-------------------------->
+<!-------------------------->
+<!-------------------------->
+<!-------------------------->
+</body>
+<script type="text/javascript">
+
+
+
+function reload(){
+var audioR = new Audio();
+audioR.src ="reload.mp3";
+audioR.play();
+}
+
+var kl = 0;
+
+function shot(){
+var audios = new Audio();
+audios.src ="shot.mp3";
+audios.play();
+
+
+kl++;
+//document.getElementById("kill").innerHTML = kl;
+document.getElementById("in").style='display:block;';
+if(bala.classList!="bala"){
+document.getElementById("bala").style='display:block;'
+bala.classList.add("bala");
+setTimeout(function(){
+    document.getElementById("bala").style='display:none;'
+bala.classList.remove("bala");
+},1000);
+
+}
+
+document.getElementById("shot").style='display:none;'
+
+
+}
+
+
+//math
+
+let num1 = Math.floor(Math.random()*10);
+let num2 = Math.floor(Math.random()*10);
+let ans = num1 + num2;
+
+document.getElementById("numOne").value = num1;
+document.getElementById("numTwo").value = num2;
+
+
+function check(){
+const inn = document.getElementById("in").value;
+if(inn == ans){
+
+document.getElementById("shot").style='display:block;'
+document.getElementById("in").style='display:none;';
+ document.getElementById("in").value="";
+ num1 = Math.floor(Math.random()*10);
+ num2 = Math.floor(Math.random()*10);
+ ans = num1 + num2;
+
+document.getElementById("numOne").value = num1;
+document.getElementById("numTwo").value = num2;
+
+
+}
+
+}
+
+
+setInterval(function(){
+check();
+
+},1);
+
+setInterval(function(){
+//const bala = document.getElementById("bala");
+//const enemys = document.getElementById("ebody");
+const pad = parseInt(window.getComputedStyle(padding).getPropertyValue("left"));
+const balas = parseInt(window.getComputedStyle(bala).getPropertyValue("left"));
+const enemys = parseInt(window.getComputedStyle(ebody).getPropertyValue("left"));
+if(pad > enemys){
+let bars = parseInt(window.getComputedStyle(bar).getPropertyValue("width"));
+bars-=11;
+bar.style.width = bars + "px"; 
+if(bars < 0 ){
+document.getElementById("gameover").style='display:block;'
+document.getElementById("baril").style='background-color:grey;'
+document.getElementById("bala").style='background-color:grey;'
+document.getElementById("ulo").style='background-color:grey;'
+document.getElementById("body").style='display:none;'
+document.getElementById("health").style='display:none;'
+document.getElementById("tiilR").style='background-color:grey;'
+document.getElementById("tiilL").style='background-color:grey;'
+document.getElementById("ebody").style='display:none;'
+document.getElementById("in").style='display:none;'
+document.getElementById("shot").style='display:none;'
+document.getElementById("bala").style='left:-300px;display:none;position:absolute;'
+document.getElementById("baril").style='display:none;'
+document.getElementById("padding").style='left:-300px;display:block;position:absolute;'
+
+setTimeout(() => {
+document.getElementById("play").style='display:block;'
+}, 3000);
+}
+
+
+document.getElementById("ebody").style='display:none;'
+
+setTimeout(function(){
+ document.getElementById("ebody").style='display:block; left:320px;'
+},1000);
+
+
+
+}
+
+
+
+if(balas > enemys){
+document.getElementById("kill").innerHTML = kl;
+ document.getElementById("ebody").style='display:none;'
+ go();
+ 
+ setTimeout(function(){
+
+  document.getElementById("ebody").style='display:block; left:320px;'
+ },1000);
+
+}
+
+
+},1);
+
+
+var KM = 20;
+function go(){
+KM--;
+document.getElementById("km").innerHTML = KM;
+if(KM <= 0){
+console.log("go");
+//clearInterval(kilo);
+document.getElementById("ebodys").style='display:none;'
+document.getElementById("ebody").style='display:none;'
+document.getElementById("shot").style='display:none;'
+document.getElementById("in").style='display:none;'
+document.getElementById("win").style='display:block;'
+document.getElementById("bala").style='position:absolute;left:800px;display:block;'
+
+setTimeout(() => {
+document.getElementById("play").style='display:block;'
+    
+}, 3000);
+}
+}
+
+//bm
+
+const audioB = new Audio();
+audioB.src ="bm.mp3";
+audioB.play();
+
+//sever
+function sever(){
+        setInterval(function(){
+        location.replace("index.html");
+    },1000);
+    }
+   
+    //sever()
+  function quit(){
+    var q = confirm("Are you sure you want to quit?");
+    if(q == true){
+        location.replace("menu.html");
+      
+    }
+
+  }
+
+  //exit play agian
+
+  function playA(){
+    
+    var audioR = new Audio();
+audioR.src ="reload.mp3";
+audioR.play();
+setTimeout(() => {
+location.replace("easy.html");
+}, 1000);
+}
+function exit(){
+    
+    var audioR = new Audio();
+audioR.src ="reload.mp3";
+audioR.play();
+setTimeout(() => {
+location.replace("menu.html");
+}, 1000);
+}
+</script>
+</html>
