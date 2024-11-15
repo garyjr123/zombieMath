@@ -13,18 +13,10 @@ if(isset($_POST["texts"])){
             $_SESSION["id"] = $row["id"];
             $found = true;
         
-            echo "<script>
-                  
-                    setTimeout(function(){ window.location.href = 'bfin.php'; }, 20);
-                    </script>";
         }
     }
     if(!$found) {
         
-        echo "<script>
-              
-                setTimeout(function(){ window.location.href = 'fnotre.php'; }, 20);
-                </script>";
     }
 }
 ?>
